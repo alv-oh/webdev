@@ -3,11 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Alvin's portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
-    <h1>First Website</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor velit quod debitis modi magnam eaque quis nisi ducimus ea saepe.</p>
-    
+   <nav>
+    <a class="nav-logo" href="#">Alvin Portfolio</a>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+   </nav>
+
+   <!-- HERO -->
+    <section class="hero">
+        <div class="hero-number">A</div>
+        <p class="hero-label">Developer & creative - Nairobi,Kenya</p>
+        <h1 class="hero-title">Building for the <em>web</em> & beyond.</h1>
+        <p class="hero-sub">I'm Alvin — a developer with an eye for design and a passion for creative work. I build clean, functional websites and explore the intersection of tech and culture.</p>
+        <div class="hero-scroll">Scroll</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <p class="section-label reveal">01 - About</p>
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <h2>Code by day, create by night</h2>
+                <p>I'm a student and developer based in Nairobi, Kenya, currently studying statistics, database systems, and algorithms. I bring the same curiosity I apply to code into writing, music, and everything in between.</p>
+                <p>When I'm not building things, I'm journaling, exploring African music and culture, or thinking deeply about how technology and creativity intersect.</p>
+            </div>
+            <div class="about-details reveal">
+                <div class="detail-row"><span>Based in</span><span>Nairobi, Kenya</span></div>
+                <div class="detail-row"><span>Currently studying</span><span>CS & Statistics</span></div>
+                <div class="detail-row"><span>Interests</span><span>Tech, Music, Writing</span></div>
+                <div class="detail-row"><span>GitHub</span><span>alv-oh</span></div>
+                <div class="detail-row"><span>Available for</span><span>Collabs & Projects</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <p class="section-label reveal">02 — Skills</p>
+        <div class="skills-grid reveal">
+            <div class="skill-card">
+                <div class="skill-icon">◻</div>
+            <h3>Frontend</h3>
+            <p>Building responsive, clean interfaces from scratch with a focus on simplicity and usability.</p>
+            <div class="skill-tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">React</span>
+            </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">◈</div>
+            <h3>Backend & Data</h3>
+            <p>Working with databases, algorithms, and the logic that powers applications behind the scenes.</p>
+            <div class="skill-tags">
+                <span class="tag">Java</span><span class="tag">SQL</span><span class="tag">Algorithms</span><span class="tag">Statistics</span>
+            </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">◇</div>
+            <h3>Creative</h3>
+            <p>Writing, storytelling, and a deep appreciation for African music, culture, and aesthetics.</p>
+            <div class="skill-tags">
+                <span class="tag">Writing</span><span class="tag">Journaling</span><span class="tag">Music</span><span class="tag">Research</span>
+            </div>
+            </div>
+        </div>
+  </section>
+
+  <!-- PROJECTS -->
+   <section id="projects">
+    <p class="section-label reveal">03 — Projects</p>
+    <div class="projects-list">
+      <a class="project-item reveal" href="https://github.com/alv-oh/Metro.Wave" target="_blank">
+        <span class="project-num">001</span>
+        <div class="project-info"><h3>Metro.Wave</h3><p>A React project — JavaScript</p></div>
+        <span class="project-arrow">↗</span>
+      </a>
+      <a class="project-item reveal" href="https://github.com/alv-oh/love-story-book" target="_blank">
+        <span class="project-num">002</span>
+        <div class="project-info"><h3>Love Story Book</h3><p>A personal creative web project — CSS</p></div>
+        <span class="project-arrow">↗</span>
+      </a>
+      <a class="project-item reveal" href="https://github.com/alv-oh/technophiles-website" target="_blank">
+        <span class="project-num">003</span>
+        <div class="project-info"><h3>Technophiles Website</h3><p>Community tech site — JavaScript</p></div>
+        <span class="project-arrow">↗</span>
+      </a>
+      <a class="project-item reveal" href="https://github.com/alv-oh/CarRentalSystem" target="_blank">
+        <span class="project-num">004</span>
+        <div class="project-info"><h3>Car Rental System</h3><p>Backend system project — Java</p></div>
+        <span class="project-arrow">↗</span>
+      </a>
+      <a class="project-item reveal" href="https://github.com/alv-oh/webdev" target="_blank">
+        <span class="project-num">005</span>
+        <div class="project-info"><h3>Webdev</h3><p>Web development practice — HTML</p></div>
+        <span class="project-arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+   <section id="contact">
+    <p class="section-label reveal">04 — Contact</p>
+    <div class="contact-inner">
+      <div class="contact-text reveal">
+        <h2>Let's build something together.</h2>
+        <p>Whether it's a project, a collaboration, or just a conversation — I'm open to it. Find me on GitHub or reach out directly.</p>
+      </div>
+      <div class="contact-links reveal">
+        <a class="contact-link" href="https://github.com/alv-oh" target="_blank">GitHub <span>alv-oh ↗</span></a>
+        <a class="contact-link" href="mailto:otangaalvin@email.com">Email <span>otangaalvin@email.com ↗</span></a>
+        <a class="contact-link" href="https://www.instagram.com/meta._.noir" target="_blank">Instagram <span>@meta._.noir ↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+   <footer>
+    <span>© 2026 Alvin</span>
+    <span>Built with HTML & CSS — Nairobi, Kenya</span>
+  </footer>
+ 
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>

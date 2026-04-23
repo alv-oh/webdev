@@ -1,0 +1,423 @@
+/* =====================
+   CSS VARIABLES (theme)
+   ===================== */
+:root {
+  --bg: #f7f5f2;        /* page background */
+  --ink: #1a1814;       /* main text color */
+  --muted: #8a8680;     /* secondary/grey text */
+  --accent: #c8622a;    /* orange highlight color */
+  --line: #e2ddd8;      /* border/divider color */
+  --card: #eeebe6;      /* card hover background */
+}
+
+/* =====================
+   RESET & BASE
+   ===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Mono', monospace;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =====================
+   NAVIGATION
+   ===================== */
+nav {
+  position: fixed;          /* stays at top when scrolling */
+  top: 0; left: 0; right: 0;
+  z-index: 100;             /* sits above everything else */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 4rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;  /* makes text ALL CAPS */
+  transition: color 0.2s;     /* smooth color change on hover */
+}
+
+.nav-links a:hover { color: var(--ink); }
+
+/* =====================
+   HERO SECTION
+   ===================== */
+.hero {
+  min-height: 100vh;          /* takes up full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  /* pushes content to bottom */
+  padding: 0 4rem 5rem;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.2s; /* starts after 0.2s delay */
+}
+
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(3.5rem, 9vw, 8rem); /* clamp = min, preferred, max */
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  max-width: 14ch;            /* max 14 characters wide */
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 0.4s;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);       /* the orange word */
+}
+
+.hero-sub {
+  margin-top: 2.5rem;
+  max-width: 42ch;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 0.6s;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  right: 4rem;
+  writing-mode: vertical-rl; /* rotates text vertically */
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards 1s;
+}
+
+.hero-scroll::after {
+  content: '';               /* creates a line below "Scroll" */
+  display: block;
+  width: 1px;
+  height: 60px;
+  background: var(--muted);
+}
+
+/* the big decorative letter "A" in the background */
+.hero-number {
+  position: absolute;
+  top: 50%;
+  right: 4rem;
+  transform: translateY(-50%);
+  font-family: 'DM Serif Display', serif;
+  font-size: 18vw;
+  color: var(--line);
+  line-height: 1;
+  user-select: none;         /* can't highlight it */
+  pointer-events: none;      /* can't click it */
+}
+
+/* =====================
+   SHARED SECTION STYLES
+   ===================== */
+section {
+  padding: 6rem 4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 3rem;
+}
+
+/* =====================
+   ABOUT SECTION
+   ===================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-text h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between; /* pushes label left, value right */
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.82rem;
+}
+
+.detail-row span:first-child { color: var(--muted); }
+
+/* =====================
+   SKILLS SECTION
+   ===================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 1px;                  /* the thin lines between cards */
+  background: var(--line);   /* line color shows through the gaps */
+}
+
+.skill-card {
+  background: var(--bg);
+  padding: 2.5rem 2rem;
+  transition: background 0.2s;
+}
+
+.skill-card:hover { background: var(--card); }
+
+.skill-icon {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.skill-card p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.skill-tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;            /* wraps to next line if needed */
+  gap: 0.4rem;
+}
+
+.tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+/* =====================
+   PROJECTS SECTION
+   ===================== */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto; /* number | info | arrow */
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.2s, padding 0.2s;
+}
+
+.project-item:hover {
+  padding-left: 1rem;
+  background: var(--card);
+  padding-right: 1rem;
+  margin: 0 -1rem;
+}
+
+.project-num {
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.project-info h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.project-info p {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.project-arrow {
+  font-size: 1.2rem;
+  color: var(--muted);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.project-item:hover .project-arrow {
+  transform: translate(4px, -4px); /* moves arrow up-right on hover */
+  color: var(--accent);
+}
+
+/* =====================
+   CONTACT SECTION
+   ===================== */
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-text h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.contact-text p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.9;
+}
+
+.contact-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+
+.contact-link:hover { color: var(--accent); }
+
+.contact-link span {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+footer {
+  padding: 2.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* =====================
+   ANIMATIONS
+   ===================== */
+
+/* the entrance animation — slides up and fades in */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px); /* starts 24px below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);    /* ends at normal position */
+  }
+}
+
+/* scroll-triggered animation — starts hidden */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* JavaScript adds this class when element enters the screen */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================
+   RESPONSIVE (mobile)
+   ===================== */
+@media (max-width: 768px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .nav-links { gap: 1.5rem; }
+  .hero { padding: 0 1.5rem 4rem; }
+  section { padding: 4rem 1.5rem; }
+
+  /* stack columns vertically on mobile */
+  .about-grid,
+  .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+
+  .skills-grid { grid-template-columns: 1fr; }
+  .project-item { grid-template-columns: 50px 1fr auto; }
+
+  footer {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .hero-number { display: none; } /* hide big "A" on small screens */
+}
