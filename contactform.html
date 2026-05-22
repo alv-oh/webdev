@@ -30,7 +30,12 @@
 
       <div class="field">
         <label for="subject">Subject Line</label>
-        <input type="text" id="subject" placeholder="What's this about?" />
+        <select name="subject" id="subject">
+          <option value="">Select a subject</option>
+          <option value="general">General Inquiry</option>
+          <option value="support">Support Request</option>
+          <option value="feedback">Feedback</option>
+        </select>
       </div>
 
       <div class="field">
@@ -42,7 +47,7 @@
     </div>
   </div>
 
-  <!-- <script>
+  <script>
     function sendMessage() {
       const fields = ['fullname', 'email', 'phone', 'subject', 'message'];
       const empty = fields.filter(id => !document.getElementById(id).value.trim());
@@ -53,7 +58,7 @@
       document.getElementById('form-area').style.display = 'none';
       document.getElementById('success-msg').style.display = 'block';
     }
-  </script> -->
+  </script>
   <div class="footer">© 2023 MexIko. All rights reserved.</div>
 </body>
 </html>

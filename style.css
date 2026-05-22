@@ -44,6 +44,9 @@ h2 {
     background-color: var(--ink);
     overflow: hidden;
 }
+.topnav-right {
+    float: right;
+}
 
 .topnav a {
     float: left;
